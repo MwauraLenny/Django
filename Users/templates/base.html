@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Base Django Template</title>
-    <link rel="stylesheet" href="../../static/css/style.css">git init
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div>
-    <nav class="navbar">
-        <div class="logo">
-            Emobilis
-        </div>
-        <div class="none">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+<div class="navigation bar">
 
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Emobilis</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'index'%}">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'about_us'%}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'contact'%}">CONTACT</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{%url 'gallery'%}">GALLERY</a>
+      </ul>
+    </div>
+  </div>
+</nav>
 </div>
 <hr>
 {% block title %}
-
 
 {%endblock%}
 
@@ -32,9 +43,29 @@
 
 {%endblock%}
 
-<section class="footer">
-    <h4>This is my footer</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate dolore esse ipsa ipsam laborum odio velit vero voluptas voluptates!</p>
-</section>
+<div class="mt-4 p-5 bg-primary text-white rounded">
+  <h1>This is the jumbotron</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aliquam amet architecto atque autem commodi
+      consectetur, cum debitis deleniti doloremque eaque esse facilis id, illo natus nobis non nostrum perferendis
+      possimus quae quia reprehenderit repudiandae sint velit veniam vitae! Aliquam distinctio dolor facere magnam rerum
+      sed ullam! Amet blanditiis dolor earum error odit officia, possimus quaerat ratione vero voluptatibus. Asperiores
+      aut autem cum dolores ducimus eaque esse et, illum impedit laborum minima numquam quas quidem quod reiciendis
+      rerum sapiente, tempore temporibus.Adipisci aperiam autem dolore earum, fuga ratione.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
